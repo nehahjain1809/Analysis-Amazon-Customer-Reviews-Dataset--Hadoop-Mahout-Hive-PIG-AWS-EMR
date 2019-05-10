@@ -1,0 +1,1 @@
+/tmp/hadoop-nehajain1809/mapred/local/1544502685712/Affin.txt

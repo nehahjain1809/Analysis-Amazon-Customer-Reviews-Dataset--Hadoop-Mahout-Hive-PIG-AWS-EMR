@@ -1,0 +1,23 @@
+CREATE TABLE IF NOT EXISTS AMAZON_DATASET ( 
+marketplace String, 
+customer_id String,
+review_id String,
+product_id String,
+product_parent String,
+product_title String,
+product_category String,
+star_rating String,
+helpful_votes String,
+total_votes String,
+vine String,
+verified_purchase String,
+review_headline String,
+review_body String,
+review_date String)
+ROW FORMAT DELIMITED FIELDS TERMINATED BY "\t"
+LINES TERMINATED BY "\n"
+LOCATION "s3://bigdatahivenehajain/input"
+tblproperties ("skip.header.line.count"="1");
+
+
+select distinct(product_category) from AMAZON_DATASET order by product_category;

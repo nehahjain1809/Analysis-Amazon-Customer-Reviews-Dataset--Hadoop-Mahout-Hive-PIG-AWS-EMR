@@ -1,0 +1,1996 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20183.18.1128.2033                               -->
+<workbook original-version='18.1' source-build='2018.3.1 (20183.18.1128.2033)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='SentimentAnalysis (SentimentAnalysis)' inline='true' name='federated.1f50l9f1f5yckn14p9w9x0b42fpy' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='SentimentAnalysis' name='excel-direct.1l681ou083wq8l1bidwwb01rc227'>
+            <connection class='excel-direct' cleaning='no' compat='no' dataRefreshTime='' filename='C:/Users/Neha Jain/Desktop/Masters/Enginnering of Big Data and Systems/Project/Project/10.Sentiment Analysis/Output_Sentiment_Analysis/sentimentanalysis/SentimentAnalysis.xlsx' interpretationMode='0' password='' server='' validate='no' />
+          </named-connection>
+        </named-connections>
+        <relation connection='excel-direct.1l681ou083wq8l1bidwwb01rc227' name='SentimentAnalysis' table='[SentimentAnalysis$]' type='table'>
+          <columns gridOrigin='A1:D10001:no:A1:D10001:0' header='yes' outcome='2'>
+            <column datatype='string' name='Product' ordinal='0' />
+            <column datatype='integer' name='Customer' ordinal='1' />
+            <column datatype='integer' name='Rating' ordinal='2' />
+            <column datatype='string' name='Sentiment' ordinal='3' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>Product</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Product]</local-name>
+            <parent-name>[SentimentAnalysis]</parent-name>
+            <remote-alias>Product</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Customer</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Customer]</local-name>
+            <parent-name>[SentimentAnalysis]</parent-name>
+            <remote-alias>Customer</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Rating</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Rating]</local-name>
+            <parent-name>[SentimentAnalysis]</parent-name>
+            <remote-alias>Rating</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Sentiment</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Sentiment]</local-name>
+            <parent-name>[SentimentAnalysis]</parent-name>
+            <remote-alias>Sentiment</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[SentimentAnalysis]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>0</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:D10001:no:A1:D10001:0&quot;</attribute>
+              <attribute datatype='boolean' name='header'>true</attribute>
+              <attribute datatype='integer' name='outcome'>2</attribute>
+            </attributes>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column datatype='string' name='[Product]' role='dimension' type='nominal' />
+      <column aggregation='Sum' datatype='integer' name='[Rating]' role='dimension' type='ordinal' />
+      <column aggregation='CountD' datatype='string' name='[Sentiment]' role='dimension' type='nominal' />
+      <column-instance column='[Product]' derivation='Count' name='[cnt:Product:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Product]' derivation='None' name='[none:Product:nk]' pivot='key' type='nominal' />
+      <column-instance column='[Sentiment]' derivation='None' name='[none:Sentiment:nk]' pivot='key' type='nominal' />
+      <layout dim-ordering='alphabetic' dim-percentage='0.482143' measure-ordering='alphabetic' measure-percentage='0.517857' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[none:Sentiment:nk]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;Negative&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Neutral&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Positive&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:Product:nk]' type='palette'>
+            <map to='#499894'>
+              <bucket>&quot;B00004VXO6&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;B00005T39Y&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;B000FVDD30&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;B000KL4TUG&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;B000VDXS3C&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;B00116V3MQ&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;B001GN28VE&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;B001XXUOQI&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;B002DX1HQ8&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;B002QK30FO&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;B002XISZJA&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;9.61287e+09&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;B000A5TAT2&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;B000B75BWE&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;B0011ULQNI&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;B0013RQL70&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;B0017GK8W6&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;B001GGL7Z4&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;B001SHIM86&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;B002FP5J1S&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;B002LTRSK8&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;B000CSWCQA&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;B000E23WZE&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;B000E44CJ2&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;B000F0KEBU&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;B0016BVDIK&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;B001CORKII&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;B001PBWNOY&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;B0026HDAC0&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;B0028ZX29Q&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;B002AQZ9LC&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;B002MFN78S&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;B000MMLHS0&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;B000OTF6G0&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;B00156PGYS&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;B001FESDRW&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;B001OTFDU8&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;B002ICGXXG&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;B002IUG14O&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;B002VGMOQE&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;B002YP8S1M&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;B00006JT4T&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;B000230LC2&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;B00064YM7W&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;B000H49LXQ&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;B000KL6UVC&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;B000WKW60U&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;B000XPJBLQ&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;B001HB8ZLM&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;B002BBJMO6&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;B002E4XR6O&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;B002QLTFFW&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;B002XIT59E&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;B00315ZDE4&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;B000EXS1BS&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;B000F43XV4&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;B000FL43PM&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;B0018P7WZ2&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;B001D4GY0C&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;B001UE6MIO&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;B0027BA2JO&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;B002C0Z3E4&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;B002OF6HM4&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;B0030DO7VC&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;B000302J1A&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;B0007RV3IE&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;B0009HAFA4&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;B000RMD42W&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;B0013HFB6C&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;B001F9DJOO&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;B001RJMBE6&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;B002ANPXRK&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;B002KBRCMG&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;B000AN8A90&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;B000BKJZ9Q&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;B000C1G25E&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;B000YGIO4E&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;B0013G8PTS&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;B0014E17D0&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;B0018Q7VAC&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;B001H4B0AC&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;B002FTR7KU&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;B002O90D3Y&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;B000171HVS&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;B0002DFKUU&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;B0009JK1MY&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;B000OYIKWW&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;B001ELJ9QK&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;B001PNX8BO&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;B001Q1VV82&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;B002JSVAGE&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;B002VPE1QG&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;B0031AVYCY&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;B00004TKUC&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;B000F7857S&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;B000FDZK70&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;B000IXJOPQ&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;B001E0SZGG&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;B001UO651S&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;B0027FFZEW&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;B002C3VSWM&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;B002KR7GPI&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;B002OWN7JS&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;B002UK7WR2&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;B0031YJVB6&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;B0001HJNPK&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;B000MPRJBQ&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;B000S5Q9CA&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;B00161G1UA&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;B001J2YYQE&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;B001P4TLUU&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;B002IXP7R8&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;B002IXYMEM&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;B002JIMZU4&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;B002WOI1I0&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;B0002EXJHU&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;B000NMOQG4&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;B000U5TUWE&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;B001MY47BG&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;B001T40FNI&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;B002J9HCU6&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;B002OL2MU4&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;B002ZLJJ90&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;B00313K11G&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;B000302HTY&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;B0006VQHXW&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;B0007R4LI8&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;B000RFU69I&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;B0013D1DBI&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;B001F7AJKI&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;B001U9L4DM&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;B001V81266&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;B002TMZHF0&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;B000302RT4&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;B0009B0IX4&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;B000SKIWA2&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;B0013CATB4&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;B0015GJXEW&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;B001FVPU9O&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;B001S3DGFE&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;B002FCEPNO&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;B002LLD422&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;B00065B0Q2&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;B000KYUQ2S&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;B000LRAHUK&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;B000YBCI96&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;B001JT5TUM&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;B002BH3I9U&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;B002FZJURC&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;B002QMYOLG&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;B002XJGFAA&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;B00008RCTS&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;B000FKP7TY&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;B000MZI064&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;B000T8XW0I&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;B001F9CLSY&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;B001WMFYH4&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;B002DWN8P2&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;B002PKV4CG&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;B002VE9T6Y&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;B0030C4K8I&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;B000BUN79K&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;B000CIIBBK&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;B000CQCGZO&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;B000YZQTYM&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;B0015EWMX8&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;B0015EZSBG&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;B0016G5LIS&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;B0018R2EMG&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;B001KV2LK0&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;B002JSS9PY&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;B002TT1BTY&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;B0002H3VXE&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;B0002UM1HI&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;B000OSKOWW&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;B000UX9YJ0&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;B001MU2GGI&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;B001P6CSNA&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;B001PM5YA8&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;B002JSSALW&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;B002VDSZII&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;B00095NCYC&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;B000LRMS66&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;B000M3K0R8&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;B000YXT4MI&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;B001KMYMRY&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;B002DW92IE&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;B002I56KIQ&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;B002QUZHZ0&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;B002XZFEBU&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;B000BWACX2&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;B000CRMP8G&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;B000ELST5S&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;B000ZBD2AO&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;B0015RB39O&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;B001P3PSS0&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;B0025KV6PG&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;B0025Z9W02&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;B002JWJEF4&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;B002P512B4&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[cnt:Product:qk]' type='palette'>
+            <map to='#499894'>
+              <bucket>&quot;B00004VXO6&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;B00005T39Y&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;B000FVDD30&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;B000KL4TUG&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;B000VDXS3C&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;B00116V3MQ&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;B001GN28VE&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;B001XXUOQI&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;B002DX1HQ8&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;B002QK30FO&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;B002XISZJA&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;9.61287e+09&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;B000A5TAT2&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;B000B75BWE&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;B0011ULQNI&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;B0013RQL70&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;B0017GK8W6&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;B001GGL7Z4&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;B001SHIM86&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;B002FP5J1S&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;B002LTRSK8&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;B000CSWCQA&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;B000E23WZE&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;B000E44CJ2&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;B000F0KEBU&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;B0016BVDIK&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;B001CORKII&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;B001PBWNOY&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;B0026HDAC0&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;B0028ZX29Q&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;B002AQZ9LC&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;B002MFN78S&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;B000MMLHS0&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;B000OTF6G0&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;B00156PGYS&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;B001FESDRW&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;B001OTFDU8&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;B002ICGXXG&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;B002IUG14O&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;B002VGMOQE&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;B002YP8S1M&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;B00006JT4T&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;B000230LC2&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;B00064YM7W&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;B000H49LXQ&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;B000KL6UVC&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;B000WKW60U&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;B000XPJBLQ&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;B001HB8ZLM&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;B002BBJMO6&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;B002E4XR6O&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;B002QLTFFW&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;B002XIT59E&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;B00315ZDE4&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;B000EXS1BS&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;B000F43XV4&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;B000FL43PM&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;B0018P7WZ2&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;B001D4GY0C&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;B001UE6MIO&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;B0027BA2JO&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;B002C0Z3E4&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;B002OF6HM4&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;B0030DO7VC&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;B000302J1A&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;B0007RV3IE&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;B0009HAFA4&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;B000RMD42W&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;B0013HFB6C&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;B001F9DJOO&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;B001RJMBE6&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;B002ANPXRK&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;B002KBRCMG&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;B000AN8A90&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;B000BKJZ9Q&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;B000C1G25E&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;B000YGIO4E&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;B0013G8PTS&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;B0014E17D0&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;B0018Q7VAC&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;B001H4B0AC&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;B002FTR7KU&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;B002O90D3Y&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;B000171HVS&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;B0002DFKUU&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;B0009JK1MY&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;B000OYIKWW&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;B001ELJ9QK&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;B001PNX8BO&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;B001Q1VV82&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;B002JSVAGE&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;B002VPE1QG&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;B0031AVYCY&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;B00004TKUC&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;B000F7857S&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;B000FDZK70&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;B000IXJOPQ&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;B001E0SZGG&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;B001UO651S&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;B0027FFZEW&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;B002C3VSWM&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;B002KR7GPI&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;B002OWN7JS&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;B002UK7WR2&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;B0031YJVB6&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;B0001HJNPK&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;B000MPRJBQ&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;B000S5Q9CA&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;B00161G1UA&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;B001J2YYQE&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;B001P4TLUU&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;B002IXP7R8&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;B002IXYMEM&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;B002JIMZU4&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;B002WOI1I0&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;B0002EXJHU&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;B000NMOQG4&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;B000U5TUWE&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;B001MY47BG&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;B001T40FNI&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;B002J9HCU6&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;B002OL2MU4&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;B002ZLJJ90&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;B00313K11G&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;B000302HTY&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;B0006VQHXW&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;B0007R4LI8&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;B000RFU69I&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;B0013D1DBI&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;B001F7AJKI&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;B001U9L4DM&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;B001V81266&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;B002TMZHF0&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;B000302RT4&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;B0009B0IX4&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;B000SKIWA2&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;B0013CATB4&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;B0015GJXEW&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;B001FVPU9O&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;B001S3DGFE&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;B002FCEPNO&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;B002LLD422&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;B00065B0Q2&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;B000KYUQ2S&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;B000LRAHUK&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;B000YBCI96&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;B001JT5TUM&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;B002BH3I9U&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;B002FZJURC&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;B002QMYOLG&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;B002XJGFAA&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;B00008RCTS&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;B000FKP7TY&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;B000MZI064&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;B000T8XW0I&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;B001F9CLSY&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;B001WMFYH4&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;B002DWN8P2&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;B002PKV4CG&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;B002VE9T6Y&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;B0030C4K8I&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;B000BUN79K&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;B000CIIBBK&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;B000CQCGZO&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;B000YZQTYM&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;B0015EWMX8&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;B0015EZSBG&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;B0016G5LIS&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;B0018R2EMG&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;B001KV2LK0&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;B002JSS9PY&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;B002TT1BTY&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;B0002H3VXE&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;B0002UM1HI&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;B000OSKOWW&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;B000UX9YJ0&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;B001MU2GGI&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;B001P6CSNA&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;B001PM5YA8&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;B002JSSALW&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;B002VDSZII&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;B00095NCYC&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;B000LRMS66&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;B000M3K0R8&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;B000YXT4MI&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;B001KMYMRY&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;B002DW92IE&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;B002I56KIQ&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;B002QUZHZ0&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;B002XZFEBU&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;B000BWACX2&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;B000CRMP8G&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;B000ELST5S&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;B000ZBD2AO&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;B0015RB39O&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;B001P3PSS0&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;B0025KV6PG&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;B0025Z9W02&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;B002JWJEF4&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;B002P512B4&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='AverageMedianRatingAnalysis'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='SentimentAnalysis (SentimentAnalysis)' name='federated.1f50l9f1f5yckn14p9w9x0b42fpy' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1f50l9f1f5yckn14p9w9x0b42fpy'>
+            <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+              <calculation class='tableau' formula='1' />
+            </column>
+            <column datatype='string' name='[Product]' role='dimension' type='nominal' />
+            <column aggregation='Sum' datatype='integer' name='[Rating]' role='dimension' type='ordinal' />
+            <column-instance column='[Rating]' derivation='Avg' name='[avg:Rating:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Rating]' derivation='Median' name='[med:Rating:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Product]' derivation='None' name='[none:Product:nk]' pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1f50l9f1f5yckn14p9w9x0b42fpy].[:Measure Names]'>
+            <groupfilter function='union' user:op='manual'>
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.1f50l9f1f5yckn14p9w9x0b42fpy].[avg:Rating:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.1f50l9f1f5yckn14p9w9x0b42fpy].[med:Rating:qk]&quot;' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.1f50l9f1f5yckn14p9w9x0b42fpy].[none:Product:nk]'>
+            <groupfilter count='100' end='top' function='end' units='records' user:ui-marker='end' user:ui-top-by-field='true'>
+              <groupfilter direction='DESC' expression='SUM([Number of Records])' function='order' user:ui-marker='order'>
+                <groupfilter function='level-members' level='[none:Product:nk]' user:ui-manual-selection='true' user:ui-manual-selection-all-when-empty='true' user:ui-manual-selection-is-empty='true' user:ui-marker='enumerate' />
+              </groupfilter>
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.1f50l9f1f5yckn14p9w9x0b42fpy].[none:Product:nk]</column>
+            <column>[federated.1f50l9f1f5yckn14p9w9x0b42fpy].[:Measure Names]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='width' field='[federated.1f50l9f1f5yckn14p9w9x0b42fpy].[:Measure Names]' value='32' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1f50l9f1f5yckn14p9w9x0b42fpy].[:Measure Names]' />
+            </encodings>
+            <style>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1f50l9f1f5yckn14p9w9x0b42fpy].[Multiple Values]</rows>
+        <cols>([federated.1f50l9f1f5yckn14p9w9x0b42fpy].[none:Product:nk] / [federated.1f50l9f1f5yckn14p9w9x0b42fpy].[:Measure Names])</cols>
+      </table>
+    </worksheet>
+    <worksheet name='MostNegativeSentimentProducts'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='SentimentAnalysis (SentimentAnalysis)' name='federated.1f50l9f1f5yckn14p9w9x0b42fpy' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1f50l9f1f5yckn14p9w9x0b42fpy'>
+            <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+              <calculation class='tableau' formula='1' />
+            </column>
+            <column datatype='string' name='[Product]' role='dimension' type='nominal' />
+            <column aggregation='CountD' datatype='string' name='[Sentiment]' role='dimension' type='nominal' />
+            <column-instance column='[Product]' derivation='None' name='[none:Product:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Sentiment]' derivation='None' name='[none:Sentiment:nk]' pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1f50l9f1f5yckn14p9w9x0b42fpy].[none:Product:nk]'>
+            <groupfilter count='100' end='bottom' function='end' units='records' user:ui-marker='end' user:ui-top-by-field='true'>
+              <groupfilter direction='DESC' expression='SUM([Number of Records])' function='order' user:ui-marker='order'>
+                <groupfilter function='level-members' level='[none:Product:nk]' user:ui-manual-selection='true' user:ui-manual-selection-all-when-empty='true' user:ui-manual-selection-is-empty='true' user:ui-marker='enumerate' />
+              </groupfilter>
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.1f50l9f1f5yckn14p9w9x0b42fpy].[none:Sentiment:nk]'>
+            <groupfilter function='member' level='[none:Sentiment:nk]' member='&quot;Negative&quot;' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.1f50l9f1f5yckn14p9w9x0b42fpy].[none:Sentiment:nk]</column>
+            <column>[federated.1f50l9f1f5yckn14p9w9x0b42fpy].[none:Product:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows />
+        <cols>[federated.1f50l9f1f5yckn14p9w9x0b42fpy].[none:Product:nk]</cols>
+      </table>
+    </worksheet>
+    <worksheet name='SentimentsForTopRatedProducts'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='SentimentAnalysis (SentimentAnalysis)' name='federated.1f50l9f1f5yckn14p9w9x0b42fpy' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1f50l9f1f5yckn14p9w9x0b42fpy'>
+            <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+              <calculation class='tableau' formula='1' />
+            </column>
+            <column datatype='string' name='[Product]' role='dimension' type='nominal' />
+            <column aggregation='CountD' datatype='string' name='[Sentiment]' role='dimension' type='nominal' />
+            <column-instance column='[Sentiment]' derivation='Count' name='[cnt:Sentiment:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Product]' derivation='None' name='[none:Product:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Sentiment]' derivation='None' name='[none:Sentiment:nk]' pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1f50l9f1f5yckn14p9w9x0b42fpy].[none:Product:nk]'>
+            <groupfilter count='50' end='top' function='end' units='records' user:ui-marker='end' user:ui-top-by-field='true'>
+              <groupfilter direction='DESC' expression='SUM([Number of Records])' function='order' user:ui-marker='order'>
+                <groupfilter function='level-members' level='[none:Product:nk]' user:ui-manual-selection='true' user:ui-manual-selection-all-when-empty='true' user:ui-manual-selection-is-empty='true' user:ui-marker='enumerate' />
+              </groupfilter>
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.1f50l9f1f5yckn14p9w9x0b42fpy].[none:Product:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1f50l9f1f5yckn14p9w9x0b42fpy].[none:Sentiment:nk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.1f50l9f1f5yckn14p9w9x0b42fpy].[cnt:Sentiment:qk]</rows>
+        <cols>[federated.1f50l9f1f5yckn14p9w9x0b42fpy].[none:Product:nk]</cols>
+      </table>
+    </worksheet>
+  </worksheets>
+  <windows saved-dpi-scale-factor='1.25' source-height='37'>
+    <window class='worksheet' maximized='true' name='SentimentsForTopRatedProducts'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.1f50l9f1f5yckn14p9w9x0b42fpy].[none:Sentiment:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.1f50l9f1f5yckn14p9w9x0b42fpy].[none:Sentiment:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{DAFD5A8F-0548-4826-83BB-75CF51AC9C2D}' />
+    </window>
+    <window class='worksheet' name='MostNegativeSentimentProducts'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.1f50l9f1f5yckn14p9w9x0b42fpy].[none:Product:nk]</field>
+            <field>[federated.1f50l9f1f5yckn14p9w9x0b42fpy].[none:Rating:ok]</field>
+            <field>[federated.1f50l9f1f5yckn14p9w9x0b42fpy].[none:Sentiment:nk]</field>
+            <field>[federated.1f50l9f1f5yckn14p9w9x0b42fpy].[sum:Rating:ok]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{5E2D669D-9E2E-4E95-AC6E-31D899F93F5E}' />
+    </window>
+    <window class='worksheet' name='AverageMedianRatingAnalysis'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+            <card type='measures' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.1f50l9f1f5yckn14p9w9x0b42fpy].[:Measure Names]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.1f50l9f1f5yckn14p9w9x0b42fpy].[:Measure Names]</field>
+            <field>[federated.1f50l9f1f5yckn14p9w9x0b42fpy].[med:Rating:qk]</field>
+            <field>[federated.1f50l9f1f5yckn14p9w9x0b42fpy].[none:Product:nk]</field>
+            <field>[federated.1f50l9f1f5yckn14p9w9x0b42fpy].[none:Rating:ok]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{DD46B5DF-6A37-4F75-A6B7-B1FD0BA7392E}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='AverageMedianRatingAnalysis' width='192'>
+      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
+    </thumbnail>
+    <thumbnail height='64' name='MostNegativeSentimentProducts' width='192'>
+      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
+      +z+mLL7ipicTrwAAAABJRU5ErkJggg==
+    </thumbnail>
+    <thumbnail height='192' name='SentimentsForTopRatedProducts' width='192'>
+      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
+      QmCC
+    </thumbnail>
+  </thumbnails>
+</workbook>
